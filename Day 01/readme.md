@@ -78,3 +78,43 @@ Build reversed number: reversed = reversed * 10 + digit
 Remove last digit using integer division (/ 10)
 
 Compare original with reversed number
+
+## 📌 Program 4: Count Repeated Digits in a Number
+
+**File:** `CountRepeatDigitinNum.java`  
+
+### 📝 Description
+This program takes an integer input from the user and **prints all digits that appear more than once**.
+### 💡 How It Works (Logic Explained)
+
+1. **Outer Loop** (`while n1 != 0`):  
+   - Picks one digit at a time (`d1 = n1 % 10`) starting from the last digit.
+2. **Inner Loop** (`while n2 != 0`):  
+   - Compares `d1` with every digit (`d2 = n2 % 10`) in the number.
+   - Counts how many times `d1` appears.
+3. **Count Check** (`if count > 1`):  
+   - If a digit appears more than once, it is printed as a repeated digit.
+4. **Reset n2 and move n1**:  
+   - `n2` is reset to the original number for the next digit comparison.  
+   - `n1` is divided by 10 to move to the next digit.
+
+⚠️ **Note:**  
+- The program works but does **not efficiently skip digits that were already counted**, which can lead to duplicate prints.  
+- A better version with **skipping control** will be included in **Day02 files**
+
+## 📌 Program 5: Check if a Number Has All Unique Digits
+
+**File:** `UniqueNumorNot.java`  
+
+### 📝 Description
+This program checks if **all digits in a number are unique**.
+### 💡 How It Works (Logic Explained)
+
+1. **Outer Loop** (`while num != 0`):  
+   - Picks one digit at a time (`d1 = num % 10`) and counts total digits.
+2. **Inner Loop** (`while temp != 0`):  
+   - Compares `d1` with every digit (`d2 = temp % 10`) in the number.  
+   - Counts how many times each digit appears.
+3. **Decision**:  
+   - If the total number of digits equals the total count of all digits (`nod == count`), the number is **unique**.  
+   - Otherwise, the number is **not unique**.

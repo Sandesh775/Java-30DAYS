@@ -10,6 +10,21 @@
  * Sum[2 to 4] = 3+4+5 = 12
  * Hint: sum(i to j) = prefix[j] - prefix[i-1] (if i>0)
  *                    = prefix[j] (if i=0)
+ * Analogy :
+ * 10 cm stick:
+|------------------|------------------|------------------|------------------|------------------|
+0                 2                  4                  6                  8                 10
+
+Small stick = 4 cm (placed once)
+[==== 4 cm ====]
+
+After placing it once:
+[==== 4 cm ====] [====== 6 cm remaining ======]
+0                4                              10
+* Interval	    Meaning	                            Length
+* [0,4]	    Used part (includes 0 and 4)	        4 cm
+* (4,10]	Remaining (excludes 4, includes 10)	    6 cm
+*
  * */
 public class Code04 {
     public static void main(String[] args) {

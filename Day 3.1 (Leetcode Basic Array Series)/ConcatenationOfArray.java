@@ -1,3 +1,4 @@
+//1929. Concatenation of Array
 //Given an integer array nums of length n, you want to create an array ans of length 2n
 // where ans[i] == nums[i] and ans[i + n]
 // == nums[i] for 0 <= i < n (0-indexed).
@@ -83,23 +84,45 @@
 //    }
 //}
 // Optimal :
+//public class ConcatenationOfArray {
+//    static void main() {
+//        int[] nums = {1,3,2,1};
+//        System.out.println("Input Array: ");
+//        for(int i: nums){
+//            System.out.print(i+" ");
+//        }
+//        System.out.println(" ");
+//        int n = nums.length;
+//        int[] ans = new int[2*n];
+//        for(int i = 0; i< ans.length; i++){
+//            ans[i] = nums[i%n];// repeat around indices in nums array : 0,1,2,0,1,2...
+//        }
+//        System.out.println("After concatenation : ");
+//        for(int i: ans){
+//            System.out.print(i+" ");
+//        }
+//    }
+//}
+// Test cases done !, there may be more optimal than this you can try that !
+// Maybe this is another more optimize :
+import java.util.ArrayList;// maybe we can use arraylist ; ie Dynamic array
+import java.util.Arrays;
 public class ConcatenationOfArray {
     static void main() {
         int[] nums = {1,3,2,1};
         System.out.println("Input Array: ");
-        for(int i: nums){
-            System.out.print(i+" ");
-        }
+        System.out.println(Arrays.toString(nums));
         System.out.println(" ");
-        int n = nums.length;
-        int[] ans = new int[2*n];
-        for(int i = 0; i< ans.length; i++){
-            ans[i] = nums[i%n];// repeat around indices in nums array : 0,1,2,0,1,2...
+        ArrayList<Integer> ans = new ArrayList<>();
+        for( int i = 0; i<2; i++){
+            for (int value : nums){
+                ans.add(value);
+            }
         }
+
         System.out.println("After concatenation : ");
-        for(int i: ans){
-            System.out.print(i+" ");
-        }
+        System.out.println(ans);
     }
 }
-// Test cases done !, there may be more optimal than this you can try that !
+// actually this one is maybe more optimize until now another one discovered in another data structure
+// and this one is learned from Neetcode youtube

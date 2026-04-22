@@ -108,7 +108,7 @@
 import java.util.ArrayList;// maybe we can use arraylist ; ie Dynamic array
 import java.util.Arrays;
 public class ConcatenationOfArray {
-    static void main() {
+    public static void main(String[] args) {
         int[] nums = {1,3,2,1};
         System.out.println("Input Array: ");
         System.out.println(Arrays.toString(nums));

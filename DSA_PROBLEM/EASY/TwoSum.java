@@ -36,14 +36,8 @@ public class TwoSum {
         int[] nums = {2, 7, 11, 15};
         int target = 9;
         twoSum(nums,target);
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        // key - index 0-4
-        hashMap.put(0,2);
-        hashMap.put(1,7);
-        hashMap.put(2,11);
-        hashMap.put(3,15);
-
-
+        int[] result = twoSumWithHashMap(nums,target);
+        System.out.println("["+result[0]+" , "+result[1]+"]");
     }
     public static void twoSum(int[] arr, int target){
         for(int i = 0; i< arr.length-1; i++){
@@ -55,7 +49,16 @@ public class TwoSum {
             }
         }
     }
-    public static void twoSumWithHashMap(){
+    public static int[] twoSumWithHashMap(int []arr, int target){
+        HashMap<Integer,Integer> map  = new HashMap<>();
 
+        for(int i = 0; i< arr.length; i++){
+            int compliment = target - arr[i];
+            if(map.containsKey(compliment)){
+                return new int[]{ map.get(compliment),i};
+            }
+            map.put(arr[i],i);
+        }
+        return new int[]{-1,-1};
     }
 }

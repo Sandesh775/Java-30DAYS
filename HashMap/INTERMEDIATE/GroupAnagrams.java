@@ -28,11 +28,16 @@ public class GroupAnagrams {
         HashMap<String, List<String>> map = new HashMap<>();
         // key - Sorted string, value - List<String> of unsorted strings
 
-        for(int i = 0; i< strs.length; i++){
-            String sorted = sortString(strs[i]);
-            if(!map.containsKey(sorted)){
-                map.put(sorted,strs[i]);
+        for(String s : strs){
+            String sorted = sortString(s);
+
+            // If key not present, create a new list for it
+            if (!map.containsKey(sorted)) {
+                map.put(sorted, new ArrayList<>());
             }
+
+            // Add the original word to the list for that key
+            map.get(sorted).add(s);
         }
         return new ArrayList<>(map.values());
     }
